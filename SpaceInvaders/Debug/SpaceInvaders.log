@@ -1,0 +1,7 @@
+﻿  GameEntities.cpp
+c:\users\victor\source\repos\spaceinvaders\spaceinvaders\gameentities.cpp(28): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\victor\source\repos\spaceinvaders\spaceinvaders\gameentities.cpp(29): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\victor\source\repos\spaceinvaders\spaceinvaders\gameentities.cpp(36): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\victor\source\repos\spaceinvaders\spaceinvaders\gameentities.cpp(108): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\victor\source\repos\spaceinvaders\spaceinvaders\gameentities.cpp(113): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  SpaceInvaders.vcxproj -> C:\Users\Victor\source\repos\SpaceInvaders\Debug\SpaceInvaders.exe
