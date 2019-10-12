@@ -19,17 +19,17 @@ public:
 	GameEntities(string texturePath, int x, int y, float speed);
 	~GameEntities();
 
-	void death();
+	void death(int xPos = 2000, int yPos = 2000);
 	void fire(GameEntities &otherEntity, int xOffset, int yOffset);
 
 	virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 
 	void move(float x, float y);
 
-	bool collidesWith(GameEntities &otherEntity);
+	bool collidesWith(const GameEntities &otherEntity) const;
 	
-	float getXPosition();
-	float getYPosition();
+	float getXPosition() const;
+	float getYPosition() const;
 
 	void setXPosition(int position = 2000);
 	void setYPosition(int position = 2000);

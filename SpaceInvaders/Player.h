@@ -9,6 +9,5 @@ public:
 	Player();
 	~Player();
 	
-	int getScore();
-	bool isAlive();
+	bool isAlive() const;
 };

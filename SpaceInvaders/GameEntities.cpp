@@ -7,7 +7,7 @@ GameEntities::GameEntities(string texturePath) {
 	this->texturePath = texturePath;
 
 	if (!texture.loadFromFile(texturePath)) {
-
+		cout << "Couldnt load the texture!" << endl;
 	}
 	sprite.setTexture(texture);
 	sprite.setPosition(sf::Vector2f(10, 720));
@@ -16,7 +16,7 @@ GameEntities::GameEntities(string texturePath) {
 GameEntities::GameEntities() {
 	texturePath = "enemy.png";
 	if (!texture.loadFromFile(texturePath)) {
-
+		cout << "Couldnt load the texture!" << endl;
 	}
 	sprite.setTexture(texture);
 	sprite.setPosition(sf::Vector2f(10, 50));
@@ -30,7 +30,7 @@ GameEntities::GameEntities(string texturePath, int x, int y, float speed) {
 	this->speed = speed;
 
 	if (!texture.loadFromFile(texturePath)) {
-
+		cout << "Couldnt load the texture!" << endl;
 	}
 	sprite.setTexture(texture);
 	sprite.setPosition(sf::Vector2f(x, y-20));
@@ -45,27 +45,28 @@ void GameEntities::draw(sf::RenderTarget& target, sf::RenderStates states) const
 }
 
 void GameEntities::move(float x, float y) {
-	this->x += x;
-	this->y += y;
+	this->x = x;
+	this->y = y;
 
 	sf::Vector2f pos = sprite.getPosition();
 	sprite.setPosition(pos.x + x, pos.y + y);
 
 }
 
-bool GameEntities::collidesWith(GameEntities &otherEntity) {
+// Funktion som kollar om GameEntityn kolliderar med en annan GameEntity
+bool GameEntities::collidesWith(const GameEntities &otherEntity) const {
 	bool isColliding = false;
 	sf::FloatRect thisBoundingBox = sprite.getGlobalBounds();
 	sf::FloatRect otherBoundingBox = otherEntity.sprite.getGlobalBounds();
 
 	if (thisBoundingBox.intersects(otherBoundingBox)) {
 		isColliding = true;
-		cout << "Kollission!!!";
 	}
 
 	return isColliding;
 }
 
+// Kallas ifrån game klassen, skjuter ut en GameEntity ifrån positionen
 void GameEntities::fire(GameEntities &otherEntity, int xOffset, int yOffset) {
 	sf::Vector2f pos = sprite.getPosition();
 	float otherPosX, otherPosY;
@@ -77,7 +78,7 @@ void GameEntities::fire(GameEntities &otherEntity, int xOffset, int yOffset) {
 
 }
 
-float GameEntities::getXPosition() {
+float GameEntities::getXPosition() const{
 	float x;
 	sf::Vector2f pos = sprite.getPosition();
 	x = pos.x;
@@ -85,7 +86,7 @@ float GameEntities::getXPosition() {
 	return x;
 }
 
-float GameEntities::getYPosition() {
+float GameEntities::getYPosition() const{
 	float y;
 	sf::Vector2f pos = sprite.getPosition();
 	y = pos.y;
@@ -93,6 +94,7 @@ float GameEntities::getYPosition() {
 	return y;
 }
 
+// Funktioner som används för att placera GameEntityn utanför spelplanen, används i death() funktionen
 void GameEntities::setXPosition(int position) {
 	sf::Vector2f pos = sprite.getPosition();
 	sprite.setPosition(position, pos.y);
@@ -103,7 +105,8 @@ void GameEntities::setYPosition(int position) {
 	sprite.setPosition(pos.x, position);
 }
 
-void GameEntities::death() {
-	setXPosition();
-	setYPosition();
+
+void GameEntities::death(int xPos, int yPos) {
+	setXPosition(xPos);
+	setYPosition(yPos);
 }

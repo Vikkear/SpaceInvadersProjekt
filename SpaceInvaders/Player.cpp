@@ -2,7 +2,6 @@
 
 Player::Player() : GameEntities("player.png") {
 	this->amountOfLives = 3;
-	this->score = 0;
 }
 
 Player::~Player() {
@@ -18,7 +17,7 @@ Player::~Player() {
 
 
 
-bool Player::isAlive() {
+bool Player::isAlive() const{
 	bool alive = false;
 	
 	if (this->amountOfLives > 0) {
@@ -26,8 +25,4 @@ bool Player::isAlive() {
 	}
 
 	return alive;
-}
-
-int Player::getScore() {
-	return score;
 }

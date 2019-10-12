@@ -13,7 +13,7 @@ Enemy::~Enemy() {
 
 }
 
-void Enemy::shoot() {
+void Enemy::shoot() const{
 
 }
 

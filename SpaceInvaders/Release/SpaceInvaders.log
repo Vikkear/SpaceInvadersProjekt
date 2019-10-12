@@ -1,13 +1,19 @@
 ﻿  GameClass.cpp
-GameClass.cpp(12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-GameClass.cpp(48): warning C4305: 'argument': truncation from 'double' to 'float'
-GameClass.cpp(52): warning C4305: 'argument': truncation from 'double' to 'float'
-GameClass.cpp(221): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  SpaceInvaders.cpp
-SpaceInvaders.cpp(23): warning C4305: 'argument': truncation from 'double' to 'float'
+GameClass.cpp(11): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+GameClass.cpp(59): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+GameClass.cpp(91): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+GameClass.cpp(98): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+GameClass.cpp(315): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+GameClass.cpp(321): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+GameClass.cpp(324): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+GameClass.cpp(327): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+GameClass.cpp(330): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+GameClass.cpp(370): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+GameClass.cpp(384): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+GameClass.cpp(388): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
   Generating code
-  0 of 120 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
+  2 of 259 functions ( 0.8%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
+    5 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   SpaceInvaders.vcxproj -> C:\Users\Victor\source\repos\SpaceInvaders\Release\SpaceInvaders.exe

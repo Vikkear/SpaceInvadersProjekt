@@ -1,26 +1,25 @@
 #include "Bullet.h"
 #include "GameEntities.h"
 
-Bullet::Bullet() : GameEntities("bullet.png", 2000,2000, 0.1){
+Bullet::Bullet() : GameEntities("bullet.png", 2000,500, 0.1){
 
 }
 
-Bullet::Bullet(int bulletType, int x, int y, float speed) : GameEntities("bullet.png", x, y, speed){
-	this->bulletType = bulletType;
+Bullet::Bullet(int x, int y, float speed) : GameEntities("bullet.png", x, y, speed){
+	
 }
 
 Bullet::~Bullet() {
 
 }
 
-int Bullet::getBulletType() {
-	return bulletType;
-}
 
-bool Bullet::isReady() {
+
+bool Bullet::isReady() const {
 	return isReadyToShoot;
 }
 
+// Funktion som kallas varje gång man skjuter och varje gång man träffar någonting
 void Bullet::toggleIsReady() {
 	if (isReadyToShoot) {
 		isReadyToShoot = false;

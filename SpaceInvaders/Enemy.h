@@ -10,5 +10,5 @@ public:
 	Enemy(int x, int y, float speed);
 	~Enemy();
 
-	void shoot();
+	void shoot() const;
 };
